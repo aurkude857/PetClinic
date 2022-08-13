@@ -1,7 +1,7 @@
 node {
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), disableConcurrentBuilds(), [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/gkdevops/PetClinic.git/'], pipelineTriggers([githubPush()])])
     
-    def MvnHome = tool name: 'apache-maven-3.8.6', type: 'maven'
+    def MvnHome = tool name: 'MAVEN3', type: 'maven'
     def MvnCli = "${MvnHome}/bin/mvn"
 
     stage('Checkout Git'){
